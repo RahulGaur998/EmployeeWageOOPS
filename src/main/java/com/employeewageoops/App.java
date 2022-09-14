@@ -1,17 +1,17 @@
 package com.employeewageoops;
 
-class Emp {
+class Employee {
     long isAbsent;
 
-    Emp() {
+    Employee() {
         isAbsent = Math.round(Math.random());
     }
 
     void isAbsentPresent() {
         if (isAbsent == 0) {
-            System.out.println("Present");
+            System.out.println("Employee is Present for the day");
         } else {
-            System.out.println("Absent");
+            System.out.println("Employee is Absent for the day");
         }
     }
 
@@ -20,7 +20,7 @@ class Emp {
 public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation");
-        Emp empObject = new Emp();
+        Employee empObject = new Employee();
         empObject.isAbsentPresent();
     }
 }
