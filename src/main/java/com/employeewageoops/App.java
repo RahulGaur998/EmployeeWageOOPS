@@ -1,15 +1,15 @@
 package com.employeewageoops;
 
 class Employee {
-    long isAbsent;
+    int isAbsent;
     int wagePerHour = 20;
-    int halfOrFullDay;
+    int partTimeOrFullTime;
     int salary;
 
     Employee() {
-        isAbsent = Math.round(Math.random());
+        isAbsent = (int) Math.round(Math.random()); // if isAbsent = 1 employee is absent else present
         if (isAbsent == 0) {
-            halfOrFullDay = ((Math.random() <= 0.5) ? 1 : 2) * 2;
+            partTimeOrFullTime = ((Math.random() <= 0.5) ? 1 : 2) * 2; // check if employee is part time or full time
         }
     }
 
@@ -21,13 +21,18 @@ class Employee {
         }
     }
 
-    void employeeDailyWage() { // To calculate daily wage of the employee for the day
-        if (isAbsent != 0) {
-            salary = 0;
-        } else {
-            salary = halfOrFullDay * wagePerHour;
+    void employeeDailyWage() { // To calculate daily wage of the employee for the
+        switch (isAbsent) { // switch on the basis of isAbsent i.e Employee is present or not
+            case 1:
+                salary = 0; // Employee is absent
+                break;
+            case 0: // Employee is present
+                salary = partTimeOrFullTime * wagePerHour;
+                break;
+            default:
+                System.out.println("No output!");
         }
-        System.out.println("Salary for the day is :" + salary);
+        System.out.println("Salary for the day is : " + salary);
     }
 }
 
