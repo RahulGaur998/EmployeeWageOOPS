@@ -3,11 +3,14 @@ package com.employeewageoops;
 class Employee {
     long isAbsent;
     int wagePerHour = 20;
-    int FullDay = 8;
+    int halfOrFullDay;
     int salary;
 
     Employee() {
         isAbsent = Math.round(Math.random());
+        if (isAbsent == 0) {
+            halfOrFullDay = ((Math.random() <= 0.5) ? 1 : 2) * 2;
+        }
     }
 
     void isAbsentPresent() { // To check if employee is present or absent for the day
@@ -22,7 +25,7 @@ class Employee {
         if (isAbsent != 0) {
             salary = 0;
         } else {
-            salary = FullDay * wagePerHour;
+            salary = halfOrFullDay * wagePerHour;
         }
         System.out.println("Salary for the day is :" + salary);
     }
