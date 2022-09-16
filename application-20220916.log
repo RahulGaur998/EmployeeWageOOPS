@@ -1,0 +1,8 @@
+2022-09-16 18:34:14.222 [main] INFO  com.employeewageoops.App - We've just greeted the user!
+2022-09-16 18:34:21.873 [main] INFO  com.employeewageoops.App - We've just greeted the user!
+2022-09-16 18:37:15.906 [main] INFO  com.employeewageoops.App - Welcome to Employee Wage Computation
+2022-09-16 18:37:15.923 [main] INFO  com.employeewageoops.App - Maximum number of hours reached: 104
+2022-09-16 18:37:15.924 [main] INFO  com.employeewageoops.App - Salary total is: 1120
+2022-09-16 18:37:27.282 [main] INFO  com.employeewageoops.App - Welcome to Employee Wage Computation
+2022-09-16 18:37:27.288 [main] INFO  com.employeewageoops.App - Maximum number of hours reached: 104
+2022-09-16 18:37:27.289 [main] INFO  com.employeewageoops.App - Salary total is: 1280

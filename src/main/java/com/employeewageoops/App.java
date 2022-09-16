@@ -1,5 +1,8 @@
 package com.employeewageoops;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 class Employee {
     int isAbsent;
     int wagePerHour = 20;
@@ -52,15 +55,18 @@ class Employee {
 }
 
 public class App {
+
+    private static final Logger logger = LogManager.getLogger(App.class);
+
     public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation");
+        logger.info("Welcome to Employee Wage Computation");
         Employee empObject[] = new Employee[20];
         int totalSalary = 0;
         int totalHours = 0;
         for (int i = 1; i < 20; i++) {
             if (totalHours >= 100) {
-                System.out.println("Maximum number of hours reached: " + totalHours);
-                System.out.println("Salary total is: " + totalSalary);
+                logger.info("Maximum number of hours reached: " + totalHours);
+                logger.info("Salary total is: " + totalSalary);
                 System.exit(0);
             }
             empObject[i] = new Employee();
@@ -68,8 +74,8 @@ public class App {
             totalSalary = totalSalary + empObject[i].employeeDailyWage();
             totalHours = totalHours + empObject[i].employeeHours();
         }
-        System.out.println("Maximum number of days reached: 20");
-        System.out.println("Salary total is :" + totalSalary);
+        logger.info("Maximum number of days reached: 20");
+        logger.info("Salary total is :" + totalSalary);
     }
 
 }
