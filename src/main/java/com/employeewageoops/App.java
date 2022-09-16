@@ -30,17 +30,24 @@ class Employee {
                 break;
             case 0: // Employee is present
                 if (partTimeOrFullTime == 1) {
-                    salary = 4 * wagePerHour;
+                    salary = 4 * wagePerHour; // If partTime = 1 i.eyyy
                 } else {
                     salary = 8 * wagePerHour;
                 }
-
                 break;
             default:
                 System.out.println("No output!");
         }
         System.out.println("Salary for the day is : " + salary);
         return salary;
+    }
+
+    int employeeHours() {
+        if (partTimeOrFullTime == 1) {
+            return 4;
+        } else {
+            return 8;
+        }
     }
 }
 
@@ -49,11 +56,20 @@ public class App {
         System.out.println("Welcome to Employee Wage Computation");
         Employee empObject[] = new Employee[20];
         int totalSalary = 0;
+        int totalHours = 0;
         for (int i = 1; i < 20; i++) {
+            if (totalHours >= 100) {
+                System.out.println("Maximum number of hours reached: " + totalHours);
+                System.out.println("Salary total is: " + totalSalary);
+                System.exit(0);
+            }
             empObject[i] = new Employee();
             empObject[i].isAbsentPresent();
             totalSalary = totalSalary + empObject[i].employeeDailyWage();
+            totalHours = totalHours + empObject[i].employeeHours();
         }
+        System.out.println("Maximum number of days reached: 20");
         System.out.println("Salary total is :" + totalSalary);
     }
+
 }
